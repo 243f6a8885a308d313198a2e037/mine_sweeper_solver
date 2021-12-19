@@ -1,0 +1,42 @@
+{
+    "python.terminal.activateEnvironment": true,
+
+    "python.pythonPath": ".venv/bin/python",
+
+    // Depends on "python.languageServer"
+    "python.autoComplete.extraPaths": [ "./mine_sweeper" ],  // for "Microsoft"
+    "python.analysis.extraPaths": [ "./mine_sweeper" ],      // for "Pylance"
+
+    // linter setting
+    "python.linting.enabled": true,
+    //// pylint
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintPath": ".venv/bin/pylint",
+    //// mypy
+    "python.linting.mypyEnabled": true,
+    "python.linting.mypyPath": ".venv/bin/mypy",
+
+    // formatter setting (works)
+    "python.formatting.provider": "black",
+    "python.formatting.blackPath": ".venv/bin/black",
+
+    "editor.formatOnSave": false,
+    "[python]": {
+        // for isort
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        },
+        // "editor.formatOnSave": false,
+        "editor.formatOnSave": true,
+    },
+
+    // avoid git diff monitor to crash
+    "files.watcherExclude": {
+        "**/__debug__*/**": true,
+        "**/__pycache__/**": true,
+        "**/.venv/**": true,
+        "**/.mypy_cache/**": true,
+        "**/.pytest_cache/**": true,
+        "**/__code_analysis__/**": true,
+    },
+}

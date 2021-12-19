@@ -1,0 +1,25 @@
+[tool.black]
+line-length=112
+target-version = ['py310']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = 'black'
+include_trailing_comma = true
+line_length = 112
+multi_line_output = 3
